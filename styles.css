@@ -1,0 +1,292 @@
+:root {
+    --pixel-bg: black;
+
+    /* Pixel Border Clip Path by Luke Bonaccorsi
+    https://pixelcorners.lukeb.co.uk/?radius=8&multiplier=4 */
+    --path: polygon(
+        0px 20px,
+        4px 20px,
+        4px 12px,
+        8px 12px,
+        8px 8px,
+        12px 8px,
+        12px 4px,
+        16px 4px,
+        20px 4px,
+        20px 0px,
+        calc(100% - 20px) 0px,
+        calc(100% - 20px) 4px,
+        calc(100% - 12px) 4px,
+        calc(100% - 12px) 8px,
+        calc(100% - 8px) 8px,
+        calc(100% - 8px) 12px,
+        calc(100% - 4px) 12px,
+        calc(100% - 4px) 16px,
+        calc(100% - 4px) 20px,
+        100% 20px,
+        100% calc(100% - 20px),
+        calc(100% - 4px) calc(100% - 20px),
+        calc(100% - 4px) calc(100% - 12px),
+        calc(100% - 8px) calc(100% - 12px),
+        calc(100% - 8px) calc(100% - 8px),
+        calc(100% - 12px) calc(100% - 8px),
+        calc(100% - 12px) calc(100% - 4px),
+        calc(100% - 16px) calc(100% - 4px),
+        calc(100% - 20px) calc(100% - 4px),
+        calc(100% - 20px) 100%,
+        20px 100%,
+        20px calc(100% - 4px),
+        12px calc(100% - 4px),
+        12px calc(100% - 8px),
+        8px calc(100% - 8px),
+        8px calc(100% - 12px),
+        4px calc(100% - 12px),
+        4px calc(100% - 16px),
+        4px calc(100% - 20px),
+        0px calc(100% - 20px)
+      );
+
+      --path-top-rm: polygon(
+        0px 0px,
+        100% 0px,
+        100% 20px,
+        100% calc(100% - 20px),
+        calc(100% - 4px) calc(100% - 20px),
+        calc(100% - 4px) calc(100% - 12px),
+        calc(100% - 8px) calc(100% - 12px),
+        calc(100% - 8px) calc(100% - 8px),
+        calc(100% - 12px) calc(100% - 8px),
+        calc(100% - 12px) calc(100% - 4px),
+        calc(100% - 16px) calc(100% - 4px),
+        calc(100% - 20px) calc(100% - 4px),
+        calc(100% - 20px) 100%,
+        20px 100%,
+        20px calc(100% - 4px),
+        12px calc(100% - 4px),
+        12px calc(100% - 8px),
+        8px calc(100% - 8px),
+        8px calc(100% - 12px),
+        4px calc(100% - 12px),
+        4px calc(100% - 16px),
+        4px calc(100% - 20px),
+        0px calc(100% - 20px)
+      );
+}
+
+body {
+    background-image: url("assets/background.png");
+    background-repeat: repeat;
+    font-family: 'VT323', monospace;
+}
+
+/* Mobile Screen */
+@media screen and (max-width: 540px) {
+    body {
+        background-size: 50vw;
+    }
+
+    .carousel-lg {
+        display: none;
+    }
+
+    .carousel-md {
+        display: none;
+    }
+
+    .carousel-sm {
+        display: block;
+    }
+}
+
+/* Tablet Screen */
+@media screen and (min-width: 540px) and (max-width: 780px) {
+    body {
+        background-size: 40vw;
+    }
+
+    .carousel-lg {
+        display: none;
+    }
+
+    .carousel-md {
+        display: none;
+    }
+
+    .carousel-sm {
+        display: block;
+    }
+}
+
+/* Small Desktop Screen */
+@media screen and (min-width: 780px) and (max-width: 1025px) {
+    body {
+        background-size: 30vw;
+    }
+
+    .carousel-lg {
+        display: none;
+    }
+
+    .carousel-md {
+        display: block;
+    }
+
+    .carousel-sm {
+        display: none;
+    }
+}
+
+/* Desktop Screen */
+@media screen and (min-width: 1025px) {
+    body {
+        background-size: 20vw;
+    }
+
+    .carousel-lg {
+        display: block;
+    }
+
+    .carousel-md {
+        display: none;
+    }
+
+    .carousel-sm {
+        display: none;
+    }
+}
+
+.main-logo {
+    width: 90vw;
+    max-width: 1000px;
+}
+
+.trailer {
+    width: 90vw;
+    max-width: 1200px;
+    aspect-ratio: 560/315;
+    border: black;
+    border-style: solid;
+}
+
+.button-fmt {
+ text-decoration: none;   
+ color: white;
+ height: fit-content;
+
+}
+
+.icons {
+    font-size: clamp(10px, 5vw, 20px);
+}
+
+.button-fmt:hover {
+    color: rgb(212, 212, 212);
+}
+
+.steam-button {
+    font-size: clamp(25px, 5vw, 40px);
+    min-height: 75px;
+    width: 80vw;
+    max-width: 800px;
+    background-color: #23263E;
+    clip-path: var(--path);
+}
+
+.button-container {
+    width: 80vw;
+    max-width: 800px;
+}
+
+.steam-button:hover {
+    background-color: #1D1D24;
+}
+
+.mod-button {
+    font-size: clamp(25px, 5vw,  40px);
+    height: 2vh;
+    min-height: 50px;
+    min-width: 300px;
+    background-color: #0091B0;
+    clip-path: var(--path);
+}
+
+.mod-button:hover {
+    background-color: rgb(14, 140, 168);
+}
+
+.socials-button {
+    font-size: clamp(25px, 3vw, 30px);
+    height: 2vh;
+    min-height: 50px;
+    min-width: 300px;
+    background-color: #7289da;
+    clip-path: var(--path);
+}
+
+.socials-button:hover {
+    background-color:#5c72c0;
+    cursor: pointer;
+}
+
+.socials-dropdown {
+    background-color: rgba(255, 255, 255, 0.658);
+    width: 80%;
+    height: 0;
+    clip-path: var(--path-top-rm);
+    transition: height 0.2s ease-in-out;
+}
+
+.socials-info {
+    font-size: clamp(20px, 2vw, 30px);
+
+}
+
+.socials-info:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.info-card {
+    clip-path: var(--path);
+    background-color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    color: white;
+}
+
+.card-row {
+    max-width: 1200px;
+    width: 90vw;
+}
+
+.info-card-img {
+    width: 100%;
+}
+
+.info-card h1 {
+    font-size: clamp(30px, 4vw, 35px)
+}
+
+.carousel {
+    max-width: 1200px;
+    width: 90vw;
+}
+
+.carousel-sm {
+    width: 60vw;
+}
+
+.carousel-item img {
+    width: 100%;
+}
+
+.screenshot-img {
+    opacity: 0.8;
+    transition: opacity 0.1s ease-in-out;
+}
+
+.screenshot-img:hover {
+    opacity: 1;
+    cursor: pointer;
+}

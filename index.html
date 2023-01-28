@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untitled Mod Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet" >
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</head>
+<body class="d-flex flex-column justify-content-center align-items-center">
+    <!-- Logo -->
+    <img src="assets/logo.png" class="main-logo"/>
+    <!-- Trailer -->
+    <iframe class="trailer" src="https://www.youtube.com/embed/Bz1aVdUYv6M?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    
+    <!-- Steam Button -->
+    <a class="steam-button button-fmt p-1 px-4 align-items-center d-flex m-2"  href="#">
+        <div class="col-md">
+            <i class="bi bi-steam button-icon"></i>
+            Play For Free
+        </div>
+        <div class="col-auto ms-auto align-self-end icons" style="min-width: 50px;">
+            <i class="bi bi-windows"></i>
+            <i class="bi bi-ubuntu"></i>
+            <i class="bi bi-apple"></i>
+        </div>
+    </a>
+
+    <div class="row button-container s-2 gap-2">
+        <!-- Mod Button -->
+        <a class="mod-button button-fmt col-12 col-md-5 p-1 px-4 align-items-center d-flex gap-3" href="#">
+            <i class="bi bi-book-fill"></i>
+            Create a Mod
+        </a>
+
+        <!-- Socials Button -->
+        <div class="col-12 col-md-5 ms-auto p-1 d-flex row justify-content-center">
+            <a class="socials-button button-fmt px-4 align-items-center d-flex gap-3 col-12" onclick="toggleSocialsDropdown()">
+                <i class="bi bi-discord"></i>
+                Follow Development
+            </a>
+            <!-- Socials Dropdown -->
+            <div class="socials-dropdown col-12 d-flex justify-content-center row" id="socialsDropdown">
+                <div class="socials-info">
+                    <i class="bi bi-discord" style="color: #7289da;"></i>
+                    Discord
+                </div>
+                <div class="socials-info">
+                    <i class="bi bi-youtube" style="color: #FF0000;"></i>
+                    Youtube
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Info Cards -->
+    <div class="row card-row gap-2 justify-content-center py-5">
+        <!-- Mod Your Way Card-->
+        <div class="col-12 col-md-3 info-card" style="background-color: #2465A1">
+            <h1>Mod Your Experience</h1>
+            <img src="assets/mod-your-way.PNG" class="info-card-img"/>
+            <p>Customize your gameplay experience however you like with over 2000 community driven mods available</p>
+        </div>
+        <!-- Play With Friends Card -->
+        <div class="col-12 col-md-3 info-card" style="background-color: #456A33;">
+            <h1>Play with Friends</h1>
+            <img src="assets/play-with-friends.PNG" class="info-card-img"/>
+            <p>Enjoy your favourite gamemodes with your friends on public servers and easily modifiable private hosting</p>
+        </div>
+
+        <!-- Create Custom Mods Card -->
+        <div class="col-12 col-md-3 info-card" style="background-color: #AE42B8;">
+            <h1>Create Custom Mods</h1>
+            <img src="assets/create-custom-mods.PNG" class="info-card-img" />
+            <p>With an easy-to-use Modding API and support for multiple programming languages, anyone with a basic level of programming knowledge can easily create mods, limited only by your imagination.</p>
+        </div>
+    </div>
+    
+    <!-- Image Carousels -->
+    <h1 style="color: white;">Screenshots</h1>
+    <!-- Image Carousel Large -->
+    <div id="img-carousel" class="carousel slide carousel-lg" data-bs-ride="true">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#img-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#img-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#img-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="row d-flex">
+                <div class="col-3 p-0">
+                    <img class="screenshot-img" src="assets/create-custom-mods.PNG" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeEnlargedScreenshot (this)">
+                </div>
+                <div class="col-3 p-0">
+                    <img class="screenshot-img" src="assets/create-custom-mods.PNG" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeEnlargedScreenshot (this)">
+                </div>
+                <div class="col-3 p-0">
+                    <img class="screenshot-img" src="assets/create-custom-mods.PNG" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeEnlargedScreenshot (this)">
+                </div>
+                <div class="col-3 p-0">
+                    <img class="screenshot-img" src="assets/create-custom-mods.PNG" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeEnlargedScreenshot (this)">
+                </div>
+                </div>
+            </div>
+          
+            <div class="carousel-item">
+                <div class="row d-flex">
+                    <div class="col-3 p-0">
+                        <img class="screenshot-img" src="assets/play-with-friends.PNG" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeEnlargedScreenshot (this)">
+                    </div>
+                    <div class="col-3 p-0">
+                        <img class="screenshot-img" src="assets/play-with-friends.PNG" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeEnlargedScreenshot (this)">
+                    </div>
+                    <div class="col-3 p-0">
+                        <img class="screenshot-img" src="assets/play-with-friends.PNG" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeEnlargedScreenshot (this)">
+                    </div>
+                    <div class="col-3 p-0">
+                        <img class="screenshot-img" src="assets/play-with-friends.PNG" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeEnlargedScreenshot (this)">
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="row d-flex">
+                    <div class="col-3 p-0">
+                        <img class="screenshot-img" src="assets/play-with-friends.PNG" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeEnlargedScreenshot (this)">
+                    </div>
+                    <div class="col-3 p-0">
+                        <img class="screenshot-img" src="assets/play-with-friends.PNG" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeEnlargedScreenshot (this)">
+                    </div>
+                    <div class="col-3 p-0">
+                        <img class="screenshot-img" src="assets/play-with-friends.PNG" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeEnlargedScreenshot (this)">
+                    </div>
+                    <div class="col-3 p-0">
+                        <img class="screenshot-img" src="assets/play-with-friends.PNG" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeEnlargedScreenshot (this)">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#img-carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#img-carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+      <!-- Image Carousel Medium -->
+    <div id="img-carousel-md" class="carousel slide carousel-md" data-bs-ride="true">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#img-carousel-md" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#img-carousel-md" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#img-carousel-md" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#img-carousel-md" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="row d-flex">
+                <div class="col-4 p-0">
+                    <img class="screenshot-img" src="assets/create-custom-mods.PNG" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeEnlargedScreenshot (this)">
+                </div>
+                <div class="col-4 p-0">
+                    <img class="screenshot-img" src="assets/create-custom-mods.PNG" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeEnlargedScreenshot (this)">
+                </div>
+                <div class="col-4 p-0">
+                    <img class="screenshot-img" src="assets/create-custom-mods.PNG" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeEnlargedScreenshot (this)">
+                </div>
+                </div>
+            </div>
+          
+            <div class="carousel-item">
+                <div class="row d-flex">
+                    <div class="col-4 p-0">
+                        <img class="screenshot-img" src="assets/play-with-friends.PNG" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeEnlargedScreenshot (this)">
+                    </div>
+                    <div class="col-4 p-0">
+                        <img class="screenshot-img" src="assets/play-with-friends.PNG" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeEnlargedScreenshot (this)">
+                    </div>
+                    <div class="col-4 p-0">
+                        <img class="screenshot-img" src="assets/play-with-friends.PNG" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeEnlargedScreenshot (this)">
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="row d-flex">
+                    <div class="col-4 p-0">
+                        <img class="screenshot-img" src="assets/play-with-friends.PNG" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeEnlargedScreenshot (this)">
+                    </div>
+                    <div class="col-4 p-0">
+                        <img class="screenshot-img" src="assets/play-with-friends.PNG" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeEnlargedScreenshot (this)">
+                    </div>
+                    <div class="col-4 p-0">
+                        <img class="screenshot-img" src="assets/play-with-friends.PNG" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeEnlargedScreenshot (this)">
+                    </div>
+                </div>
+            </div>
+
+          <div class="carousel-item">
+            <div class="row d-flex">
+                <div class="col-4 p-0">
+                    <img class="screenshot-img" src="assets/play-with-friends.PNG" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeEnlargedScreenshot (this)">
+                </div>
+                <div class="col-4 p-0">
+                    <img class="screenshot-img" src="assets/play-with-friends.PNG" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeEnlargedScreenshot (this)">
+                </div>
+                <div class="col-4 p-0">
+                    <img class="screenshot-img" src="assets/play-with-friends.PNG" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeEnlargedScreenshot (this)">
+                </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#img-carousel-md" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#img-carousel-md" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+      <!-- Image Carousel Small -->
+    <div id="img-carousel-sm" class="carousel slide carousel-sm" data-bs-ride="true">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#img-carousel-sm" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#img-carousel-sm" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#img-carousel-sm" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#img-carousel-sm" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#img-carousel-sm" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            <button type="button" data-bs-target="#img-carousel-sm" data-bs-slide-to="5" aria-label="Slide 6"></button>
+            <button type="button" data-bs-target="#img-carousel-sm" data-bs-slide-to="6" aria-label="Slide 7"></button>
+            <button type="button" data-bs-target="#img-carousel-sm" data-bs-slide-to="7" aria-label="Slide 8"></button>
+            <button type="button" data-bs-target="#img-carousel-sm" data-bs-slide-to="8" aria-label="Slide 9"></button>
+            <button type="button" data-bs-target="#img-carousel-sm" data-bs-slide-to="9" aria-label="Slide 10"></button>
+            <button type="button" data-bs-target="#img-carousel-sm" data-bs-slide-to="10" aria-label="Slide 11"></button>
+            <button type="button" data-bs-target="#img-carousel-sm" data-bs-slide-to="11" aria-label="Slide 12"></button>
+
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="row d-flex">
+                <div class="col-12 p-0">
+                    <img class="screenshot-img" src="assets/create-custom-mods.PNG" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeEnlargedScreenshot (this)">
+                </div>
+                </div>
+            </div>
+            
+            <div class="carousel-item">
+                <div class="row d-flex">
+                    <div class="col-12 p-0">
+                        <img class="screenshot-img" src="assets/play-with-friends.PNG" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeEnlargedScreenshot (this)">
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="row d-flex">
+                    <div class="col-12 p-0">
+                        <img class="screenshot-img" src="assets/play-with-friends.PNG" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeEnlargedScreenshot (this)">
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="row d-flex">
+                    <div class="col-12 p-0">
+                        <img class="screenshot-img" src="assets/play-with-friends.PNG" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeEnlargedScreenshot (this)">
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row d-flex">
+                    <div class="col-12 p-0">
+                        <img class="screenshot-img" src="assets/play-with-friends.PNG" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeEnlargedScreenshot (this)">
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row d-flex">
+                    <div class="col-12 p-0">
+                        <img class="screenshot-img" src="assets/play-with-friends.PNG" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeEnlargedScreenshot (this)">
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row d-flex">
+                    <div class="col-12 p-0">
+                        <img class="screenshot-img" src="assets/play-with-friends.PNG" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeEnlargedScreenshot (this)">
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row d-flex">
+                    <div class="col-12 p-0">
+                        <img class="screenshot-img" src="assets/play-with-friends.PNG" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeEnlargedScreenshot (this)">
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row d-flex">
+                    <div class="col-12 p-0">
+                        <img class="screenshot-img" src="assets/play-with-friends.PNG" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeEnlargedScreenshot (this)">
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row d-flex">
+                    <div class="col-12 p-0">
+                        <img class="screenshot-img" src="assets/play-with-friends.PNG" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeEnlargedScreenshot (this)">
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row d-flex">
+                    <div class="col-12 p-0">
+                        <img class="screenshot-img" src="assets/play-with-friends.PNG" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeEnlargedScreenshot (this)">
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row d-flex">
+                    <div class="col-12 p-0">
+                        <img class="screenshot-img" src="assets/play-with-friends.PNG" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="changeEnlargedScreenshot (this)">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#img-carousel-sm" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#img-carousel-sm" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    
+
+      <!-- Screenshot Modal -->
+    <div class="modal fade modal-fullscreen" id="staticBackdrop" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Screenshot</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="enlargedScreenshotImg" src="" style="width: 100%;"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
