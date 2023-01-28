@@ -46,6 +46,40 @@
         0px calc(100% - 20px)
       );
 
+      --path-top-left-rm: polygon(
+        0px 0px,
+        calc(100% - 20px) 0px,
+        calc(100% - 20px) 4px,
+        calc(100% - 12px) 4px,
+        calc(100% - 12px) 8px,
+        calc(100% - 8px) 8px,
+        calc(100% - 8px) 12px,
+        calc(100% - 4px) 12px,
+        calc(100% - 4px) 16px,
+        calc(100% - 4px) 20px,
+        100% 20px,
+        100% calc(100% - 20px),
+        calc(100% - 4px) calc(100% - 20px),
+        calc(100% - 4px) calc(100% - 12px),
+        calc(100% - 8px) calc(100% - 12px),
+        calc(100% - 8px) calc(100% - 8px),
+        calc(100% - 12px) calc(100% - 8px),
+        calc(100% - 12px) calc(100% - 4px),
+        calc(100% - 16px) calc(100% - 4px),
+        calc(100% - 20px) calc(100% - 4px),
+        calc(100% - 20px) 100%,
+        20px 100%,
+        20px calc(100% - 4px),
+        12px calc(100% - 4px),
+        12px calc(100% - 8px),
+        8px calc(100% - 8px),
+        8px calc(100% - 12px),
+        4px calc(100% - 12px),
+        4px calc(100% - 16px),
+        4px calc(100% - 20px),
+        0px calc(100% - 20px)
+      );
+
       --path-top-rm: polygon(
         0px 0px,
         100% 0px,
@@ -70,6 +104,30 @@
         4px calc(100% - 16px),
         4px calc(100% - 20px),
         0px calc(100% - 20px)
+      );
+
+      --path-bottom-rm: polygon(
+        0px 20px,
+        4px 20px,
+        4px 12px,
+        8px 12px,
+        8px 8px,
+        12px 8px,
+        12px 4px,
+        16px 4px,
+        20px 4px,
+        20px 0px,
+        calc(100% - 20px) 0px,
+        calc(100% - 20px) 4px,
+        calc(100% - 12px) 4px,
+        calc(100% - 12px) 8px,
+        calc(100% - 8px) 8px,
+        calc(100% - 8px) 12px,
+        calc(100% - 4px) 12px,
+        calc(100% - 4px) 16px,
+        calc(100% - 4px) 20px,
+        calc(100% - 4px) 100%,
+        0px 100%
       );
 }
 
@@ -214,6 +272,19 @@ body {
     background-color: rgb(14, 140, 168);
 }
 
+.explore-mod-button {
+    font-size: clamp(20px, 5vw, 40px);
+    min-height: 75px;
+    width: 80vw;
+    max-width: 800px;
+    background-color:rgb(25, 204, 25);
+    clip-path: var(--path);
+}
+
+.explore-mod-button:hover {
+    background-color: rgb(29, 185, 29);
+}
+
 .socials-button {
     font-size: clamp(25px, 3vw, 30px);
     height: 2vh;
@@ -297,4 +368,51 @@ body {
 
 .modal-dialog img{
     clip-path: var(--path);
+}
+
+.featured-mods-container {
+    color: white;
+    width: 80vw;
+    max-width: 1200px;
+}
+
+.featured-mods-tag {
+    clip-path: var(--path-bottom-rm);
+    background-color: #23263E;
+    font-size: clamp(10px, 3vw, 20px);
+    width: fit-content;
+    margin-bottom: -1px;
+}
+
+.featured-mods-content {
+    width: 100%;
+    clip-path: var(--path-top-left-rm);
+    background-image: radial-gradient(#20264e, #23263E);
+    --bs-gutter-x: 0;
+}
+
+.featured-mods-content img {
+    width: 100%;
+}
+
+.mod-card {
+    border-radius: 10px;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 10px;
+}
+
+.mod-card-background {
+    background-image: linear-gradient(rgb(109, 108, 108), rgb(65, 65, 65));
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.mod-card h3 {
+    font-size: clamp(10px, 1.75vw, 20px);
+}
+
+.mod-card h4 {
+    font-size: clamp(7px, 2vw, 15px);
+    padding-left: 10px;
 }
