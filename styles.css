@@ -389,6 +389,9 @@ body {
     clip-path: var(--path-top-left-rm);
     background-image: radial-gradient(#20264e, #23263E);
     --bs-gutter-x: 0;
+    max-height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .featured-mods-content img {
@@ -415,10 +418,44 @@ body {
 }
 
 .mod-card h3 {
-    font-size: clamp(10px, 1.75vw, 20px);
+    font-size: clamp(15px, 1.75vw, 20px);
 }
 
 .mod-card h4 {
-    font-size: clamp(7px, 2vw, 15px);
+    font-size: clamp(10px, 2vw, 15px);
     padding-left: 10px;
+}
+
+.steam-embed {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    aspect-ratio:646/500;
+    width: 90vw;
+    max-height: 300px;
+    max-width: 646px;
+}
+
+.footer {
+    width: 100%;
+    background-image: linear-gradient(rgb(119, 119, 119), rgb(80, 79, 79));
+    color: white;
+}
+
+.credits {
+    width: 80vw;
+    max-width: 1200px;
+}
+
+.dev-avatar {
+    border-radius: 100%;
+    width: 100%;
+}
+
+.credits i {
+    font-size: 1.75rem;
+    color: white;
+}
+
+.credits i:hover {
+    color:rgba(255, 255, 255, 0.658);
 }
