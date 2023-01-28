@@ -400,6 +400,12 @@ body {
     padding-left: 0;
     padding-right: 0;
     margin: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.mod-card:hover {
+    cursor: pointer;
 }
 
 .mod-card-background {
