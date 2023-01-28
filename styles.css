@@ -294,3 +294,7 @@ body {
     opacity: 1;
     cursor: pointer;
 }
+
+.modal-dialog img{
+    clip-path: var(--path);
+}
